@@ -51,7 +51,7 @@ var tRemainder = diffTime % snapshot.val().trainFrequency;
 var tMinutesTillTrain = snapshot.val().trainFrequency - tRemainder;
 var nextTrain = moment().add(tMinutesTillTrain, "minutes");
 
-$("#train-table").append('<tr><td>' + snapshot.val().trainName + '</td><td>' + snapshot.val().destination + '</td><td>' + snapshot.val().firstTrainTime + '</td><td>' + moment(nextTrain).format("hh:mm") + '</td><td>' + tMinutesTillTrain + '</td></tr>');
+$("#train-table").append('<tr><td>' + snapshot.val().trainName + '</td><td>' + snapshot.val().destination + '</td><td>' + snapshot.val().trainFrequency + '</td><td>' + moment(nextTrain).format("hh:mm") + '</td><td>' + tMinutesTillTrain + '</td></tr>');
 
 }, function(errorObject) {
 	console.log("Errors handled: " + errorObject.code);
